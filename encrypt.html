@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <title>YONOSE</title>
+  </head>
+
+  <body class="bgcolour-twitter">
+    <nav class="navbar navbar-expand-lg navbar-dark bgcolour-twitter-Dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">YONOSE</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="index.html">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="encrypt.html">Encrypt</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="decrypt.html">Decrypt</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+          </div>
+        </div>
+    </nav>
+
+    <div class=" viewport p-3" data-aos="zoom-in">
+    <h2 class="text-info">Encrypt Text</h2>
+    <br>
+    <form id="form">
+        <h3 class="text-white">Unencrypted message:</h3>
+        <textarea type="text" id="cypher" class="form-control" cols="40" rows="5" placeholder="Write your message here"></textarea>
+        <br><br>
+
+        <h3 class="text-white">Key:</h3>
+        <input type="number" value="1" id="offset" class="input-group-text" />
+        <br><br>
+
+        <h3 class="text-white">Encrypted message:</h3>
+        <textarea type="text" id="finish" class="form-control" cols="40" rows="5" placeholder="The encrypted text will appear here"></textarea>
+
+        <br/><br/>
+    </form>
+    <button onclick="copyText();textCopiedAlert();" class="btn btn-primary mr-2 mb-2">Copy encrypted text</button>
+    <a href="decrypt.html" class="btn btn-secondary mb-2">New decryption</a>
+
+    <hr>
+
+    <a href="index.html" class="btn btn-dark mb-2">Home</a>
+
+    <hr> 
+
+    </div>
+
+    <footer class="bg-dark text-center text-white sticky-bottom">
+      <a href="http://github.com/seanjl"><p class="text-white">created by seanjl</p></a>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+        AOS.init();
+    </script>
+
+    <script>
+        function textCopiedAlert() {
+            var key = document.getElementById("offset").value;
+        alert("The encrypted text was copied! \n\nRemember the key to decrypt the text \nKEY: " + key);
+    }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+    <script src="js/cr0.js"></script>
+
+</body>
+
+</html>
